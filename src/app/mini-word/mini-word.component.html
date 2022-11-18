@@ -1,0 +1,52 @@
+
+<section class="">
+
+        <div class="row">
+            <div  class="col-sm-4 col-sm-push-8">
+                style<select
+                class=" shadow" [(ngModel)]="family" >
+                    <option value="Arial">Arial</option>
+                    <option value="Franklin Gothic Medium">Franklin</option>
+                    <option value="Helvetica">Helvetica </option>
+                    <option value="Optima">Optima</option>
+                    <option value="Calibri">Calibri</option>
+                
+                </select>
+
+             
+
+            </div>
+        <div
+        class="col-sm-4 col-sm-push-8">
+           Size <input [(ngModel)]="size" class=" shadow "  type="number">
+        </div>
+        <div
+        class="col-sm-4 col-sm-push-8">
+            color <input  [(ngModel)]="color" class="shadow"  type="color">
+        </div>
+        </div>
+   
+ 
+    <br>
+    <div class="row">
+        <div class="col-sm-4 col-sm-push-8">
+            <input  [(ngModel)]="Mytext" appSimilateur
+            class="input1 shadow" 
+            name="name" 
+            rows="15" 
+            cols="50" 
+            placeholder="Your text here ">
+        
+        </div>
+        <div class="col-sm-2 col-sm-push-8" >
+        </div>
+        <div class="col-sm-4 col-sm-push-8">
+            <div class="flex-box">
+                 <div [ngStyle]="{'color':color,'font-size': size+'px','font-family':family}"class="paragrapht shadow" >
+               {{Mytext}} </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>

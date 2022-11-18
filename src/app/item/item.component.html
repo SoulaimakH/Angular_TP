@@ -1,0 +1,10 @@
+<span matLine>
+    <hr>
+</span>
+ 
+  <div [ngClass]="col" [ngStyle]="{'background-color':background_color}" 
+   (click)="sendData(personne)" matLine><img [src]="personne.image | defaultImage" matListAvatar alt=""> {{ personne.lname }}</div>
+ 
+   <span matLine>
+    <hr>
+</span>

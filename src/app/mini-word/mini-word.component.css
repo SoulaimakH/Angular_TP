@@ -1,0 +1,46 @@
+
+  
+section {
+    padding: 5%;
+    padding-top: 0;
+   
+}
+  
+.side {
+    margin-left: 0;
+}
+select {
+    margin: 10px;
+    width: 80%;
+    margin-bottom: 25px;
+}
+input {
+    margin: 10px;
+    width: 80%;
+    margin-bottom: 25px;
+}
+
+  
+textarea {
+    padding: 3%;
+    border-color: #957dad;
+    border-width: thick;
+}
+.input1{
+    padding: 3%;
+    border-color: #090809;
+    border-width: thick; 
+}
+.paragrapht{
+    padding: 3%;
+    border-color: #6f5689;
+    border-radius: 2%;
+    border: solid;
+    width: 300px;
+    height:300px ;
+}
+  
+.flex-box {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
+            <div class="card border-0 shadow">
+                <img src="https://www.bootdey.com/img/Content/avatar/avatar6.png" alt="...">
+                <div class="card-body p-1-9 p-xl-5">
+                    <div class="mb-4">
+                        <h3 class="h4 mb-0">{{personne.firstname}} {{personne.lname}}</h3>
+                        <span class="text-primary">{{personne.Job}} </span>
+                    </div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3"><a href="#!"><i class="far fa-envelope display-25 me-3 text-secondary"></i>{{personne.email}}</a></li>
+                        <li class="mb-3"><a href="#!"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>{{personne.Tel}}</a></li>
+                        <li><a href="#!"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>#personne.Adress</a></li>
+                    </ul>
+                    <ul class="social-icon-style2 ps-0">
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="ps-lg-1-6 ps-xl-5">
+                <div class="form">
+                    <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" [(ngModel)]="personne.firstname" placeholder="Your name..">
+            
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" [(ngModel)]="personne.lname" placeholder="Your last name..">
+                <label for="lname">Job</label>
+                <input type="text" id="lname" name="Job" [(ngModel)]="personne.Job" placeholder="Job">
+                <label for="lname">email</label>
+                <input type="text" id="lname" name="email" [(ngModel)]="personne.email" placeholder="email">
+                <label for="lname">Tel</label>
+                <input type="text" id="lname" name="Tel" [(ngModel)]="personne.Tel" placeholder="Tel">
+                <label for="lname">Adress</label>
+                <input type="text" id="lname" name="Tel" [(ngModel)]="personne.Adress" placeholder="Adress">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
