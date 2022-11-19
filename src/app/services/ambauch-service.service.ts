@@ -7,19 +7,16 @@ import { Personne } from '../model/personne';
 })
 export class AmbauchServiceService {
   personnesliste:Personne[]=[]
-  constructor(private toastr: ToastrService) { }
+  constructor() { }
 
   addCv(personne:Personne){
     if(this.personnesliste.indexOf(personne)==-1){
       this.personnesliste.push(personne)
-      return this. showSuccess() 
+      return 1 //this. showSuccess() 
     }
     else{
-      this.toastr.error("cv deja selectionné","failed")
-    }
+     return 0
   }
   
-  showSuccess() {
-    this.toastr.success('Added  to embauchelist', 'successfully');
   }
 }

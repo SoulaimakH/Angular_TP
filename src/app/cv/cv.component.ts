@@ -11,16 +11,18 @@ import { CvServiceService } from '../services/cv-service.service';
 export class CvComponent implements OnInit {
   isHidden: boolean = true;
   personnesliste:Personne[]
-  personne:Personne 
-  
-  constructor( private cvServiceService: CvServiceService,
+  personne:Personne =new Personne()  
+  listeEmbauche:Personne[]
+  constructor( private toastr: ToastrService,private cvServiceService: CvServiceService,
     private ambauchServiceService:AmbauchServiceService) { 
     this.personnesliste=cvServiceService.personnesliste
-    this.personne=this.personnesliste[0]
+    //this.personne=this.personnesliste[0]
+    this.listeEmbauche=this.ambauchServiceService.personnesliste
+   
   }
 
   ngOnInit(): void {
- 
+   
   }
   getpersonne(personne:any) {
    // console.log(personne)
@@ -30,8 +32,16 @@ export class CvComponent implements OnInit {
     this.isHidden=!this.isHidden
   }
   add(){
-    console.log(this.personne)
-    this.ambauchServiceService.addCv(this.personne)
+   // console.log(this.personne)
+    const result=this.ambauchServiceService.addCv(this.personne)
+    if(result==1){
+      this.toastr.success('Added  to embauchelist', 'successfully');
+    }
+    else {
+      this.toastr.error("cv deja selectionné","failed")
+    
+    }
   }
+
 
 }

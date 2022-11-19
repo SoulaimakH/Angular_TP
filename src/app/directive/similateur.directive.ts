@@ -4,7 +4,6 @@ import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angula
   selector: '[appSimilateur]'
 })
 export class SimilateurDirective {
-  @Input() appSimilateur = '';
   constructor() { }
 
   Colors = ['green','red','blue','yellow','AliceBlue','BlueViolet','Chocolate','DarkCyan'];

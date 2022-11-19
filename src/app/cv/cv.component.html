@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div  class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
-            <div (click)="affichedetails()" class="card border-0 shadow" >
+            <div *ngIf='personne.id'(click)="affichedetails()" class="card border-0 shadow" >
                 <img  [src]="personne.image| defaultImage" alt="...">
                 <br>
                 <span style="margin-left: 45%;" class="h4 mb-0">{{ personne.id}}</span>
@@ -44,7 +44,7 @@
         </div>
         
     </div>
-    <h5>Liste des CVS sélectionnés pour embauche</h5>
+    <h5 *ngIf="listeEmbauche.length">Liste des CVS sélectionnés pour embauche</h5>
 
 </div>
 
