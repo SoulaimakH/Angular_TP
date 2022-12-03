@@ -1,0 +1,8 @@
+<div class="bloc">
+    <div class="select">
+      <select  (change)="onChange($event)" >
+        <option *ngFor="let list of listeRoutes">
+            {{list}}</option>
+      </select>
+    </div>
+  </div>

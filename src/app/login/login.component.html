@@ -1,0 +1,26 @@
+
+  <div class="login">
+    <h2 class="login-header">Log in</h2>
+    <form [formGroup]="myGroup" class="login-container" (ngSubmit)="signIn()">
+      <p >
+        <input  type="email" placeholder="Email" formControlName="email" >
+      </p>
+      
+      <div *ngIf="email && (email.dirty || email.touched)" class="help-block">
+        <div>email is required </div>
+      </div>
+        
+
+      <p>
+        <input type="password" placeholder="Password" formControlName="password">
+      </p>
+      <div *ngIf="password && (password.dirty || password.touched)" class="help-block">
+        <div *ngIf="password.errors?.['minlength']"> Short password</div>
+        <div *ngIf="password.errors?.['required']">Password is required </div>
+      </div>
+      <p>
+        <button  type="submit" class="btn btn-primary" [disabled]="myGroup.invalid" >
+            Envoyer</button>
+      </p>
+    </form>
+  </div>

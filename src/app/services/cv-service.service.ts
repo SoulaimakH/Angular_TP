@@ -7,7 +7,7 @@ import { Personne } from '../model/personne';
 export class CvServiceService {
   personnesliste:Personne[]=[
     {
-      id:"1",
+      id:"0",
       firstname: 'Dakota ',
       lname: 'Johnston',
       job: 'Data Scientist',
@@ -19,7 +19,7 @@ export class CvServiceService {
       image:'https://www.bootdey.com/img/Content/avatar/avatar6.png'
     },
     {
-      id:"2",
+      id:"1",
       firstname: 'user1 ',
       lname: 'lastName',
       job: 'CEO Founder',
@@ -31,7 +31,7 @@ export class CvServiceService {
       image:''
   },
   {
-    id:"3",
+    id:"2",
     firstname: 'user2',
     lname: 'lastName2',
     job: 'CEO Founder',
@@ -43,7 +43,7 @@ export class CvServiceService {
     image:' '
 },
     {
-      id:"4",
+      id:"3",
       firstname: 'Mark ',
       lname: 'Brin',
       job: 'CEO Founder',
@@ -55,4 +55,6 @@ export class CvServiceService {
       image:'../assets/marc.jpg'
   }]
   constructor() { }
+
+  
 }

@@ -1,9 +1,13 @@
 <span matLine>
     <hr>
 </span>
- 
-  <div [ngClass]="col" [ngStyle]="{'background-color':background_color}" 
-   (click)="sendData(personne)" matLine><img [src]="personne.image | defaultImage" matListAvatar alt=""> {{ personne.lname }}</div>
+ <div class="row">
+    <div [ngClass]="col" [ngStyle]="{'background-color':background_color}" 
+    (click)="sendData(personne)" matLine><img [src]="personne.image | defaultImage" matListAvatar alt=""> {{ personne.lname }}</div>
+    <div class="col">
+     <button (click)="getCV()"  type="button" class="btn btn-success" >details</button>
+    </div>
+ </div>
  
    <span matLine>
     <hr>

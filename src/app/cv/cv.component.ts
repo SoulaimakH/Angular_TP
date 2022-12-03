@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Personne } from '../model/personne';
 import { AmbauchServiceService } from '../services/ambauch-service.service';
@@ -13,11 +14,21 @@ export class CvComponent implements OnInit {
   personnesliste:Personne[]
   personne:Personne =new Personne()  
   listeEmbauche:Personne[]
-  constructor( private toastr: ToastrService,private cvServiceService: CvServiceService,
-    private ambauchServiceService:AmbauchServiceService) { 
+  personneId: number=0
+  constructor( private router:Router,private toastr: ToastrService,private cvServiceService: CvServiceService,
+    private ambauchServiceService:AmbauchServiceService,private route: ActivatedRoute) { 
     this.personnesliste=cvServiceService.personnesliste
     //this.personne=this.personnesliste[0]
     this.listeEmbauche=this.ambauchServiceService.personnesliste
+   
+    route.params.subscribe(params=>{this.personneId=params['id']
+   if(this.personneId)
+    this.personne=this.personnesliste[this.personneId]
+  });
+
+    //const routeParams = this.route.snapshot.paramMap;
+   // const personneIdFromRoute = Number(routeParams.get('id'));
+   
    
   }
 
@@ -43,5 +54,8 @@ export class CvComponent implements OnInit {
     }
   }
 
+  delete(){
+    this.router.navigate(['/delete/'+this.personne.id]);
+  }
 
 }

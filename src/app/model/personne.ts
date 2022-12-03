@@ -5,7 +5,7 @@ export class Personne {
     job!: string;
     Age!:string;
     Cin!:string;
-    image!:string;
+    image:string='';
     Tel!:string;
     Adress!:string
     email!: string;

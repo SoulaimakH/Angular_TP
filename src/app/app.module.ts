@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FirstcomponentComponent } from './firstcomponent/firstcomponent.component';
 import { CarteVisiteComponent } from './carte-visite/carte-visite.component';
@@ -20,6 +20,12 @@ import { CvServiceService } from './services/cv-service.service';
 import { EmbaucheListeComponent } from './embauche-liste/embauche-liste.component';
 import { AmbauchServiceService } from './services/ambauch-service.service';
 import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
+import { AppRoutingModule } from './app-routing.module';
+import { MenuComponent } from './menu/menu.component';
+import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
+import { LoginComponent } from './login/login.component';
+import { AddpersonneComponent } from './addpersonne/addpersonne.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const sharedModule = [
   MatButtonModule,
@@ -39,13 +45,19 @@ const sharedModule = [
     MiniWordComponent,
     SimilateurDirective,
     DefaultImagePipe,
-    EmbaucheListeComponent
+    EmbaucheListeComponent,
+    MenuComponent,
+    RouterSimulatorComponent,
+    LoginComponent,
+    AddpersonneComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserAnimationsModule, // required animations module
    
-    BrowserModule, FormsModule,sharedModule, BrowserAnimationsModule,
-    ToastrModule.forRoot(),  ToastNoAnimationModule.forRoot(),
+    BrowserModule, FormsModule,
+    ReactiveFormsModule,sharedModule, BrowserAnimationsModule,
+    ToastrModule.forRoot(),  ToastNoAnimationModule.forRoot(), AppRoutingModule,
   ],
   providers: [CvServiceService,FormsModule,sharedModule,SimilateurDirective,AmbauchServiceService],
   bootstrap: [AppComponent]

@@ -15,8 +15,11 @@
   </select>
   </div>
   </div>
-  <mat-list-item *ngFor="let personne of personnes">
-   <app-item [col]="tojson()" [background_color]="color"  (sendMessageToDad)="getpersonne($event)"  [personne]="personne"></app-item>
+  <mat-list-item *ngFor="let personne of personnes let i=index">
+   
+      <app-item  *ngIf='personne' [col]="tojson()" [background_color]="color" [personne]="personne" ></app-item>
+    
+   <!--<app-item [col]="tojson()" [background_color]="color"  (sendMessageToDad)="getpersonne($event)"  ></app-item>-->
  
   </mat-list-item>
   
