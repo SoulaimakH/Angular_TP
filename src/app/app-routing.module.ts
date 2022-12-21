@@ -12,7 +12,6 @@ import { GalleryComponent } from './gallery/gallery.component';
 
 
 const routes: Route[]= [
-
 { path:'CV', component: CvComponent },
 { path: "MiniWord", component: MiniWordComponent },
 { path: 'detail/:id', component: CvComponent },
@@ -21,6 +20,7 @@ const routes: Route[]= [
 { path: 'Add', component: AddpersonneComponent },
 { path: 'Gallery', component: GalleryComponent },
 ];
+
 @NgModule({
 imports: [CommonModule,RouterModule.forRoot(routes)],
 exports: [RouterModule],

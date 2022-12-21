@@ -1,7 +1,7 @@
 
   <div class="login">
     <h2 class="login-header">Log in</h2>
-    <form [formGroup]="myGroup" class="login-container" (ngSubmit)="signIn()">
+    <form [formGroup]="myform" class="login-container" (ngSubmit)="signIn()">
       <p >
         <input  type="email" placeholder="Email" formControlName="email" >
       </p>
@@ -19,7 +19,7 @@
         <div *ngIf="password.errors?.['required']">Password is required </div>
       </div>
       <p>
-        <button  type="submit" class="btn btn-primary" [disabled]="myGroup.invalid" >
+        <button  type="submit" class="btn btn-primary" [disabled]="myform.invalid" >
             Envoyer</button>
       </p>
     </form>

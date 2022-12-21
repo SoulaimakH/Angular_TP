@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   isSubmitted  =  false;
   
- myGroup = new FormGroup({
+  myform = new FormGroup({
   email : new FormControl('', [Validators.required,Validators.email]),
   password :new FormControl('', [Validators.required,Validators.minLength(4)])
 });
@@ -21,14 +21,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
    
   }
-  get email() { return this.myGroup.get('email'); }
+  get email() { return this.myform.get('email'); }
 
-  get password() { return this.myGroup.get('password'); }
+  get password() { return this.myform.get('password'); }
 
   signIn(){
     this.isSubmitted = true;
-    console.log(this.myGroup.valid)
-    if(this.myGroup.valid){
+    console.log(this.myform.valid)
+    if(this.myform.valid){
       this.router.navigateByUrl('/CV');
     }
    

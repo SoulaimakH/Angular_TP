@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { Personne } from '../model/personne';
 import { CvServiceService } from '../services/cv-service.service';
 
@@ -8,12 +9,17 @@ import { CvServiceService } from '../services/cv-service.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
+
 export class ListComponent implements OnInit {
-  @Output() sendMessageToDad = new EventEmitter<any>();
-  @Input() personnes:Personne[]=[]
+  //@Output() sendMessageToDad = new EventEmitter<any>();
+  //@Input()
+  personnedetails:Personne=new Personne()
+  subject = new Subject<number>();
+   personnes:Personne[]=[]
   color='white'
   number=4
   personneId:number=0
+  
   col: any[]=[{'col-md-1':'true'},{'col-md-2':'true'},{'col-md-3':'true'},{'col-md-4':'true'},{'col-md-5':'true'}]
   constructor( private router:Router,private route: ActivatedRoute,private cvServiceService: CvServiceService)
    { 
@@ -26,21 +32,26 @@ export class ListComponent implements OnInit {
    }
   
   });
-
+  this.subject.subscribe({
+    next: (v) => console.log(`observerA: ${v}`),
+  });
   }
 
   ngOnInit(): void {
   }
   sendData(p:any) {
-    this.sendMessageToDad.emit(p);
+   // this.sendMessageToDad.emit(p);
   }
   getpersonne(personne:any) {
     // console.log(personne)
-    this.sendMessageToDad.emit(personne);
+    //this.sendMessageToDad.emit(personne);
    }
    tojson(){
     return this.col[this.number]
    }
 
-  
+   select(personne:Personne){
+    this.cvServiceService.selectPersonne(personne)
+   }
+ 
 }
